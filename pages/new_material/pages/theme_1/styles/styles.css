@@ -80,8 +80,8 @@ body{
 .content{
     display: flex;
     flex-direction: column;
-    height: 83vh;
-    overflow-y: auto;
+    /* height: 83vh;
+    overflow-y: auto; */
     scroll-snap-align: start;
     padding: 35px;
     margin: 0px 25px 25px 0px;
