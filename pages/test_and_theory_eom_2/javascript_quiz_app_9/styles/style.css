@@ -263,4 +263,43 @@ input:disabled {
     .step_marker_and_buttons{
         margin-top: 20vh;
     }
+
+    .black_header{
+		height: 180px;
+	}
+
+	ul li div{
+		width: 500px;
+	}
+	.button_part{
+        display: flex;
+        margin-top: 5vh;
+        padding-bottom: 50px;
+    }
+	.step_marker_and_buttons button {
+		height: 50px;
+		width: 130px;
+		font-size: inherit;
+	}
+
+	.step_marker_and_buttons {
+		display: flex;
+		margin-top: 5vh;
+		padding-left: 15px;
+		padding-right: 15px;
+		padding-bottom: 30px;
+	}
+
+	.step_marker{
+        margin-left: 0;
+		padding-bottom: 20px;
+	}
+
+	.step_marker_and_buttons{
+        margin-top: 20vh;
+        align-items: center;
+        justify-content: center;
+		flex-direction: column;
+	}
 }
+
