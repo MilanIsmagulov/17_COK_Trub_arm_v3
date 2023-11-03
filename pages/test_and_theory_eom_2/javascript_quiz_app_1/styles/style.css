@@ -249,7 +249,7 @@ input:disabled {
     .step_marker_and_buttons {
         width: 93vw;
         padding-bottom: 0px;
-        margin-top: 35px;
+        margin-top: 2vh;
     }
 
     .answers_btn form div {

@@ -234,7 +234,8 @@
 .first{
     padding-top: 15px;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
+    
 }
 
 .theory_eom::-webkit-scrollbar-track
@@ -316,7 +317,7 @@
     }
     .popup_text{
         display: flex;
-        align-items: center;
+        align-items: flex-start;
         height: 500px;
     }
 }
