@@ -48,7 +48,8 @@ body{
 }
 
 .container{
-    min-height: 812px;
+    /* min-height: 850px; */
+    height: 100vh;
     display: flex;
     flex-direction: row;
     align-items: flex-start;
