@@ -1,6 +1,7 @@
 // dran&drop 1
 let checkAnwserButton = document.querySelector('#control_button_2')
 let reloadButton = document.querySelector('#control_button_3')
+let backButton = document.querySelector('#control_button_1')
 let nextButton = document.querySelector('#control_button_4')
 // let 
 const anwserArr = ['Открутите гайки крепления втулки и отведите кронштейны', 'Подтяните равномерно гайки крепления втулки сальника', 'Установите новую сальниковую набивку', 'Подготовьте новую сальниковую набивку необходимой длины', 'Установите на место кронштейны крепления втулки сальника', 'Уплотните сальниковые кольца', 'Извлеките изношенную сальниковую набивку',];
@@ -13,9 +14,17 @@ function reloadPage(){
 }
 
 
-
-let numberOfQuestion = 8; 
+let numberOfQuestion = 13; 
 let numberOfQuestionSum = 13;
+
+backButton.setAttribute('onclick',`location.href='../javascript_quiz_app_${numberOfQuestion-1}/index.html'`)
+if (numberOfQuestion != numberOfQuestionSum){
+    nextButton.setAttribute('onclick',`location.href='../javascript_quiz_app_${numberOfQuestion+1}/index.html'`)
+} else {
+    nextButton.setAttribute('onclick',`location.href='../javascript_result_page/index.html'`)
+}
+
+
 
 let questionHead = document.querySelector('#number_question_head');
 
