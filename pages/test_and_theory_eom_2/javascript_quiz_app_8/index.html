@@ -3,9 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./scripts/Sortable.js"></script>
     <script src="./scripts/script.js" defer></script>
     <link rel="stylesheet" href="./styles/style.css">
-    <title>Расставьте по порядку</title>
+    <title>Эксплуатация и обслуживание трубопроводной арматуры</title>
+    <style>
+        
+    </style>
 </head>
 <body>
     <div class="black_header">
@@ -22,26 +26,68 @@
             <h2 id="number_question_head"><span>1.</span> Расставьте по порядку</h2>
         </div>
         <div class="number_marker">
-            <img id="description_button_1" src="./content/description.svg" alt="description">
+            <img  onclick="openPopUp()" id="description_button_1" src="./content/description.svg" alt="description">
             <p class="number_question_ten">1/10</p>
         </div>
     </div>
     <div class="main_window">
+
         <div class="body-inner">
+            
             <div class="drag1">
+                
+                <div class="numbers">
+                    <!-- <span class="number">1</span>
+                    <span class="number">1</span>
+                    <span class="number">1</span>
+                    <span class="number">1</span>
+                    <span class="number">1</span>
+                    <span class="number">1</span>
+                    <span class="number">1</span>
+                    <span class="number">1</span>
+                    <span class="number">1</span>
+                    <span class="number">1</span> -->
+                </div>
+
                 <ul class="list" id="list">
                 
                 </ul>
-                <div class="button_part">
-                    <div class="step_marker">
 
-                    </div>
-                    <div class="buttons_div">
-                        <button id="control_button_1" onclick="location.href='../javascript_quiz_app_7/index.html'">Назад</button>
-                        <button onclick="checkAnwser()" id="control_button_2">Ответить</button>
-                        <button onclick="reloadPage()" class="disabled_button" id="control_button_3">Повторить</button>
-                        <button class="disabled_button" id="control_button_4" onclick="location.href='../javascript_quiz_app_9/index.html'">Далее</button>
-                    </div>
+            </div>
+        </div>
+    </div>
+    <div class="button_part">
+        <div class="step_marker">
+
+        </div>
+        <div class="buttons_div">
+            <button id="control_button_1" onclick="location.href='../javascript_quiz_app_5/index.html'">Назад</button>
+            <button onclick="checkAnwser()" id="control_button_2">Ответить</button>
+            <button onclick="reloadPage()" class="disabled_button" id="control_button_3">Повторить</button>
+            <button class="disabled_button" id="control_button_4" onclick="location.href='../javascript_quiz_app_7/index.html'">Далее</button>
+        </div>
+    </div>
+    <div id="popup1" class="popup close">
+        <div class="popup_body">
+            <div class="popup_content">
+                <div class="popup_header">
+                    <h3> </h3>
+                    <button onclick="closePopUp()" id="close_popup_button_1"><img src="./content/close.svg" alt="close"></button>
+                </div>
+                <div class="popup_text">
+                    <h3>1. Ознакомьтесь с правилами безопасной работы при эксплуатации и техническом обслуживании трубопроводной арматуры</h3>
+                    <h3>2. Рассмотрите основные принципы работы и эксплуатации задвижек</h3>
+                    <h3>3. Установите соответствие между схемой запорного органа и его названием</h3>
+                    <h3>4. Изучите виды работ,  а так же инструменты и приспособления для технического обслуживания запорной арматуры</h3>
+                    <h3>5. Изучите порядок действий при замене сальникового уплотнения задвижек</h3>
+                    <h3>6. Изучите последовательность работ по донабивке сальниковых уплотнений</h3>
+                    <h3>7. Изучите последовательность действий при замене паронитовой прокладки на задвижке</h3>
+                    <h3>8. Распределите в правильной последовательности этапы замены сальниковой набивки</h3>
+                    <h3>9. Аварийные утечки на линейных задвижках ликвидируются</h3>
+                    <h3>10. Укажите, для чего паронитовую прокладку перед установкой смазывают</h3>
+                    <h3>11. Укажите, какой инструмент используют для извлечения сальниковой набивки</h3>
+                    <h3>12. Изучите принцип работы и правила эксплуатации кранов, клапанов и вентилей</h3>
+                    <h3>13. Укажите, какие способы применяются для увеличения срока службы узлов трубопроводной арматуры</h3>
                 </div>
             </div>
         </div>

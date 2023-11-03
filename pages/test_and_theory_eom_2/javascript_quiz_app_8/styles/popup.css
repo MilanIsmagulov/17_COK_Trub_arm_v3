@@ -1,5 +1,5 @@
 .popup_text{
-    height: 650px;
+    height: 450px;
     overflow-y: auto;
     scroll-snap-align: start;
     padding: 15px;
@@ -112,7 +112,7 @@
     color: black;
     min-width: 700px;
     max-width: 1700px;
-    min-height: 80vh;
+    min-height: 45vh;
     border-radius: 25px;
     padding: 25px;
 }
@@ -192,13 +192,10 @@
 
 .theory_eom{
     flex-direction: column;
+    height: 540px;
+    overflow-y: auto;
     margin-right: 25px;
-    width: 100%;
-}
-
-.popup_text video{
-    height: 620px;
-    border-radius: 20px;
+    
 }
 
 .image_part{
@@ -206,7 +203,7 @@
     position: relative;
     box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.25);
     padding: 15px;
-    margin: 35px;
+    margin-left: 50px;
     border-radius: 35px;
 
 }
@@ -236,10 +233,9 @@
 
 .first{
     padding-top: 15px;
-    width: 100%;  
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    flex-direction: column;
 }
 
 .theory_eom::-webkit-scrollbar-track
@@ -285,43 +281,7 @@
 .second{
     width: 95%;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
+    flex-direction: column;
     justify-content: space-between;
-}
-
-@media (max-width: 1180px) {
-    .black_header{
-        height: 120px;
-    }
-
-
-    .black_header h1{
-        width: 50%;
-    }
-
-    .step_marker_and_buttons{
-        display: flex;
-    }
-
-    .theory_eom{
-        height: 400px;
-    }
-    .content{
-        margin-right: 0;
-    }
-    .popup_text img{
-
-        height: 100%;
-    }
-    .popup_body{
-        height: 50vh;
-    }
-    .popup_content {
-        height: 50vh;
-    }
-    .popup_text{
-        display: flex;
-        align-items: center;
-        height: 500px;
-    }
 }
