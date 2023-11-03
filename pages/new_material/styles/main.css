@@ -12,13 +12,14 @@ a{
 }
 
 html{
-    
+    height: 100vh;
     background-image: url('../content/background_image.jpg');
 }
 
 body{
+    height: 100vh;
     background-color: rgba(189, 215, 238, 0.85);
-    min-height: 100%;
+
 }
 
 .black_header{
@@ -48,8 +49,6 @@ body{
 }
 
 .container{
-    /* min-height: 850px; */
-    height: 100vh;
     display: flex;
     flex-direction: row;
     align-items: flex-start;
