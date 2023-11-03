@@ -198,8 +198,12 @@ input:disabled {
 
 .theory_eom{
     display: flex;
-    align-items: center;
+    align-items: flex-start;
+    flex-direction: column;
+    height: 58vh;
+    overflow-y: auto;
     margin-left: 25px;
+    margin-right: 25px;
 }
 
 .main_image{
@@ -250,6 +254,8 @@ input:disabled {
     .right_first span{
         margin: 10px;
         padding: 15px;
+        font-size: 20px;
+        border-radius: 15px;
     }
 
     .answers_btn form {
@@ -266,6 +272,10 @@ input:disabled {
         height: 40vh;
         margin: 10px;
         border-radius: 10px;
+    }
+
+    .image_part{
+        margin: 15px;
     }
 
     .choices_div2{
@@ -308,6 +318,7 @@ input:disabled {
         margin: 10px;
         margin-top: 10px;
     }
+
     .button_part {
         margin-top: 5px;
         padding-bottom: 0px;
@@ -345,7 +356,7 @@ input:disabled {
     }
     .popup_text{
         display: flex;
-        align-items: center;
+        align-items: flex-start;
         height: 500px;
     }
 }

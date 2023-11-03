@@ -190,13 +190,6 @@
     cursor: pointer;
 }
 
-.theory_eom{
-    flex-direction: column;
-    height: 58vh;
-    overflow-y: auto;
-    margin-right: 25px;
-    
-}
 
 .image_part{
     padding-top: 25px;
