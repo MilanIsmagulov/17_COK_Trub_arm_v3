@@ -233,6 +233,12 @@ body{
     background: rgb(255, 144, 144);
 }
 
+.step_marker_and_buttons {
+    margin-top: 3vh;
+    width: 95vw;
+    padding-bottom: 50px;
+}
+
 .correct input{
     cursor: no-drop;
 }
@@ -269,6 +275,7 @@ body{
     }
 
     .step_marker_and_buttons {
+        margin-top: 3vh;
         width: 95vw;
         padding-bottom: 50px;
         
@@ -279,11 +286,7 @@ body{
     }
 }
 
-.step_marker_and_buttons{
-    position: absolute;
-    bottom: 50px;
-    width: 96%;
-}
+
 
 .upper_img{
     margin: 35px;

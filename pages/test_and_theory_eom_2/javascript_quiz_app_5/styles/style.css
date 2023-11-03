@@ -38,7 +38,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 95px;
+    height: clamp(95px, 20vh, 130px);
     color: white;
     background-color: black;
 }
@@ -53,6 +53,11 @@ body{
     width: 300px;
     margin-left: 25px;
     transition: all 0.3s;
+}
+
+.black_header h1{
+    width: 70%;
+    
 }
 
 .black_header a:hover{
@@ -262,10 +267,7 @@ td{
     }
 }
 
-.theory_eom{
-    display: flex;
-    align-items: center;
-}
+
 
 .main_image{
     position: relative;
@@ -274,9 +276,45 @@ td{
     border-radius: 15px;
 }
 
+.theory_eom{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 60vh;
+    overflow-y: auto;
+    margin-right: 25px;
+    
+}
+
 .theory_eom p{
     color: #000;
     font-weight: 500;
+}
+
+.theory_eom::-webkit-scrollbar-track
+{   
+    border-radius: 10px;
+	background-color: #dadada;
+	border-radius: 0px;
+    padding: 15px;
+    width: 25px;
+}
+
+.theory_eom::-webkit-scrollbar
+{
+    border-radius: 10px;
+	width: 10px;
+	background-color: #F5F5F5;
+    padding: 15px;
+    width: 15px;
+}
+
+.theory_eom::-webkit-scrollbar-thumb
+{   
+	background-color: rgba(0, 0, 0, .2);
+	border-radius: 10px;
+	background-image: rgba(0, 0, 0, .2);
+    width: 15px;
 }
 
 @media (max-width: 820px) {
@@ -293,9 +331,6 @@ td{
         width: 93vw;
     }
 
-    .theory_eom{
-        height: 600px;
-    }
     .content{
         margin-right: 0;
     }
@@ -318,9 +353,6 @@ td{
         display: flex;
     }
 
-    .theory_eom{
-        height: 400px;
-    }
     .content{
         margin-right: 0;
     }

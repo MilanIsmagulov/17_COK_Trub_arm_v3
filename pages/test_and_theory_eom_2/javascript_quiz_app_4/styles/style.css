@@ -200,8 +200,6 @@ input:disabled {
     display: flex;
     align-items: flex-start;
     flex-direction: column;
-    height: 58vh;
-    overflow-y: auto;
     margin-left: 25px;
     margin-right: 25px;
 }
@@ -295,8 +293,6 @@ input:disabled {
 
     .theory_eom{
         flex-direction: column;
-        height: 52vh;
-        overflow-y: auto;
         margin-right: 25px;
         
     }
