@@ -14,7 +14,7 @@ function reloadPage(){
 }
 
 
-let numberOfQuestion = 13; 
+let numberOfQuestion = 8; 
 let numberOfQuestionSum = 13;
 
 backButton.setAttribute('onclick',`location.href='../javascript_quiz_app_${numberOfQuestion-1}/index.html'`)
