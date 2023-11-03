@@ -240,7 +240,7 @@
     padding-top: 15px;
     width: 100%;  
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: flex-start;
 }
 
@@ -292,38 +292,5 @@
 }
 
 @media (max-width: 1180px) {
-    .black_header{
-        height: 120px;
-    }
 
-
-    .black_header h1{
-        width: 50%;
-    }
-
-    .step_marker_and_buttons{
-        display: flex;
-    }
-
-    .theory_eom{
-        height: 400px;
-    }
-    .content{
-        margin-right: 0;
-    }
-    .popup_text img{
-
-        height: 100%;
-    }
-    .popup_body{
-        height: 50vh;
-    }
-    .popup_content {
-        height: 50vh;
-    }
-    .popup_text{
-        display: flex;
-        align-items: center;
-        height: 500px;
-    }
 }
