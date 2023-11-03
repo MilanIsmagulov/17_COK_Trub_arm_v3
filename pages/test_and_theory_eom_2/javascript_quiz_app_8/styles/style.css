@@ -320,23 +320,17 @@ ul li div{
     .theory_eom{
         height: 400px;
     }
+	
     .content{
         margin-right: 0;
     }
-    .popup_text img{
 
+    .popup_text img{
         height: 100%;
     }
-    .popup_body{
-        height: 50vh;
-    }
-    .popup_content {
-        height: 50vh;
-    }
-    .popup_text{
-        display: flex;
-        align-items: center;
-        height: 500px;
+
+	.popup_text{
+		align-items: flex-start;
     }
 }
 
