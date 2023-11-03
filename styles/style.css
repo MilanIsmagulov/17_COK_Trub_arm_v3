@@ -10,9 +10,7 @@
    
 body{
     background: #f4f4f4;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
     min-height: 100vh;
     overflow-x: hidden;
 }
@@ -244,7 +242,7 @@ a{
 
 .mdk{
     margin-left: 75px;
-    width: 70px;
+    width: 300px;
 }
 
 .mdk_text{
