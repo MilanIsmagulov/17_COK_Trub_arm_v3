@@ -348,6 +348,27 @@ ul li div{
         margin-top: 5vh;
         padding-bottom: 50px;
     }
+	.button_part button {
+		height: 50px;
+		width: 130px;
+		font-size: inherit;
+	}
 
+	.button_part {
+		display: flex;
+		margin-top: 5vh;
+		padding-left: 15px;
+		padding-right: 15px;
+		padding-bottom: 30px;
+	}
+
+	.step_marker{
+		padding-bottom: 20px;
+	}
+
+	.button_part{
+		flex-direction: column;
+	}
 }
+
 
