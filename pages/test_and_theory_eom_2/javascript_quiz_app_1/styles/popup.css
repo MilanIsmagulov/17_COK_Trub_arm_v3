@@ -285,11 +285,7 @@
 }
 
 @media (max-width: 1180px) {
-    .black_header{
-        height: 120px;
-    }
-
-
+    
     .black_header h1{
         width: 50%;
     }
@@ -316,7 +312,9 @@
     }
     .popup_text{
         display: flex;
-        align-items: center;
+        align-items: flex-start;
+        justify-content: flex-start;
+        text-align: start;
         height: 500px;
     }
 }
