@@ -748,6 +748,11 @@ input:disabled {
 }
 
 @media (max-width: 1180px){
+  .window_header{
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
   .drag4-inner{
     width: 70%;
     gap: 20px;

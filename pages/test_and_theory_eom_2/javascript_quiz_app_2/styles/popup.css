@@ -56,7 +56,7 @@
 {   
     border-radius: 10px;
 	background-color: #dadada;
-	border-radius: 0px;
+	border-radius: 10px;
     padding: 15px;
     width: 25px;
 }
@@ -286,11 +286,6 @@
 }
 
 @media (max-width: 1180px) {
-    .black_header{
-        height: 120px;
-    }
-
-
     .black_header h1{
         width: 50%;
     }
@@ -300,21 +295,26 @@
     }
 
     .theory_eom{
-        height: 400px;
+        height: 55vh;
+        margin-right: 1px;
     }
+
     .content{
         margin-right: 0;
     }
-    .popup_text img{
 
+    .popup_text img{
         height: 100%;
     }
+
     .popup_body{
         height: 50vh;
     }
+
     .popup_content {
         height: 50vh;
     }
+
     .popup_text{
         display: flex;
         align-items: flex-start;

@@ -318,6 +318,7 @@ input:disabled {
 
     .theory_eom{
         height: 600px;
+        margin-right: 1px;
     }
     .content{
         margin-right: 0;

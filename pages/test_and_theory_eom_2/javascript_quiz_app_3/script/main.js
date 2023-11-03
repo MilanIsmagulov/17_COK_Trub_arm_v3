@@ -1,8 +1,11 @@
-const anwserArr4 = ['Шибер', 'Клин', 'Диск']
-const imgPathArr = ['./content/03_01.png', './content/03_02.png', './content/03_03.png'] 
+const anwserArr4 = ['Шибер', 'Клин', 'Диск', ]
+const imgPathArr = ['./content/03_01.png', './content/03_02.png', './content/03_03.png', ] 
 
 const row3 = document.getElementById('row3')
 const collumnInner = document.getElementById('drag4-inner')
+
+let questionPlc = document.querySelector('#question_text_1')
+
 
 let rowList2 = []
 let fieldsList = []
@@ -12,9 +15,11 @@ let dragElem3;
 let startIndx2;
 let endIndx2;
 
-
 let numberOfQuestion = 3; 
 let numberOfQuestionSum = 13;
+
+questionPlc.innerHTML = `<span>${numberOfQuestion}. </span> Установите соответствие между схемой запорного органа и его названием`
+
 
 let stepMarkerPlace = document.querySelector('.step_marker');
 console.log("stepMarkerPlace")
@@ -32,13 +37,6 @@ for (let i = 0; i < numberOfQuestionSum-numberOfQuestion; i++){
 
 let stepPlaceDescription = document.querySelector('.number_description');
 stepPlaceDescription.innerHTML = numberOfQuestion + '/' + numberOfQuestionSum;
-
-let questionText = 'Установите соответствие между схемой запорного органа и его названием'
-let questionPlase = document.querySelector('#question_text_1');
-questionPlase.innerHTML = '<span>' + numberOfQuestion + '. ' + '</span>' + questionText;
-
-
-
 
 createRow2()
 createColumnElement()
@@ -70,7 +68,7 @@ function createColumnElement() {
         field.classList.add('field-col')
         field.innerHTML = `
         <img class="img-col" src="${item}" alt="img">
-        <div class="field" index="${index}"></div>
+        <div class="field" id="${index}"></div>
         `
         fullList2.push(field)
         collumnInner.appendChild(field)
@@ -162,7 +160,6 @@ reloadButton.addEventListener('click', function(){
 function checkAnwser4() {
     fullList2.forEach((item, index) => {
         if (item.children[1].querySelector('.item4')?.innerText.trim() === undefined) {
-            localStorage.setItem('answer_' + numberOfQuestion, JSON.stringify({questionPlace: false}));
             item.children[1].classList.add('incorrect')
             reloadButton.classList.remove('disabled_button')
             nextButton.classList.remove('disabled_button')
@@ -171,14 +168,12 @@ function checkAnwser4() {
             const itemName = item.children[1].querySelector('.item4').innerText.trim();
 
             if (itemName !== anwserArr4[index]) {
-                localStorage.setItem('answer_' + numberOfQuestion, JSON.stringify({questionPlace: false}));
                 item.children[1].classList.add('incorrect')
                 reloadButton.classList.remove('disabled_button')
                 nextButton.classList.remove('disabled_button')
                 answerButton.classList.add('disabled_button')
             } else {
                 item.children[1].classList.remove('incorrect')
-                localStorage.setItem('answer_' + numberOfQuestion, JSON.stringify({questionPlace: true}));
                 item.children[1].classList.add('correct')
                 reloadButton.classList.remove('disabled_button')
                 nextButton.classList.remove('disabled_button')
@@ -195,27 +190,27 @@ function addEventListeners4() {
 
     itemElem.forEach((item) => {
         item.draggable = true;
-        item.addEventListener('dragstart', dragStart3);
-        item.addEventListener('dragend', dragEnd3);
+        // item.addEventListener('dragstart', dragStart3);
+        // item.addEventListener('dragend', dragEnd3);
     });
     fieldsElem.forEach((elem) => {
-        elem.addEventListener('dragover', dragOver3);
-        elem.addEventListener('dragenter', dragEnter3);
-        elem.addEventListener('dragleave', dragLeave3);
-        elem.addEventListener('drop', dragDrop3);
+        // elem.addEventListener('dragover', dragOver3);
+        // elem.addEventListener('dragenter', dragEnter3);
+        // elem.addEventListener('dragleave', dragLeave3);
+        // elem.addEventListener('drop', dragDrop3);
     });
     rowElem.forEach((elem) => {
-        elem.addEventListener('dragover', dragOver3);
-        elem.addEventListener('dragenter', dragEnter3);
-        elem.addEventListener('dragleave', dragLeave3);
-        elem.addEventListener('drop', dragDrop3);
+        // elem.addEventListener('dragover', dragOver3);
+        // elem.addEventListener('dragenter', dragEnter3);
+        // elem.addEventListener('dragleave', dragLeave3);
+        // elem.addEventListener('drop', dragDrop3);
     })
 }
 
 let zoomImgButton1 = document.querySelector('#zoom_button_0');
 let zoomImgButton2 = document.querySelector('#zoom_button_1');
 let zoomImgButton3 = document.querySelector('#zoom_button_2');
-let zoomImgButton4 = document.querySelector('#zoom_button_3');
+let zoomImgButton4 = document.querySelector('#description_button');
 
 let popUpImg1 = document.querySelector('#popup1');
 let popUpImg2 = document.querySelector('#popup2');
@@ -253,9 +248,8 @@ closePopUpbutton3.addEventListener('click', function(){
     popUpImg3.classList.add('close');
 });
 
-let descriptionBtn = document.querySelector('#description_button')
 
-descriptionBtn.addEventListener('click', function(){
+zoomImgButton4.addEventListener('click', function(){
     popUpImg4.classList.remove('close');
 });
 

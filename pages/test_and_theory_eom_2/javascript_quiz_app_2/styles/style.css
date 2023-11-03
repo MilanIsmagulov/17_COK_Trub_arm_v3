@@ -215,6 +215,10 @@ input:disabled {
 
     }
 
+    .black_header{
+        height: 130px;
+    }
+
     .theory_eom{
         display: block;
         margin-left: 25px;
@@ -251,9 +255,15 @@ input:disabled {
     }
 
     .step_marker_and_buttons {
-        width: 90vw;
+        width: 93vw;
         padding-bottom: 0px;
         
+    }
+
+    .questions{
+        margin: 15px;
+        margin-top: 0;
+        margin-bottom: 0;
     }
 
     .answers_btn form div {
@@ -263,9 +273,7 @@ input:disabled {
     .main_buttons button {
         width: 130px;
     }
-    .questions{
-        margin: 15px;
-    }
+
     .questions p{
         padding:  10px;
     }
