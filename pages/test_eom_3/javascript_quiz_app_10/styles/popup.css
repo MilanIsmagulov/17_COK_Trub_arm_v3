@@ -1,6 +1,6 @@
 .popup_text{
-    height: 90%;
-    overflow-y: scroll;
+    height: 70vh;
+    overflow-y: auto;
     scroll-snap-align: start;
     padding: 15px;
     align-items: flex-start;
@@ -100,7 +100,7 @@
 }
 
 .popup_body {
-    /* height: 90vh; */
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -110,7 +110,7 @@
 .popup_content {
     background-color: white;
     color: black;
-    width: 90vw;
+    width: 80vw;
     border-radius: 25px;
     padding: 25px;
 }

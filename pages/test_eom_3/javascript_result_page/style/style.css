@@ -56,7 +56,8 @@ body{
     margin: 25px;
     width: 70%;
     font-size: 30px;
-    padding: 25px;
+    padding: 1vh;
+    padding-left: 1vw;
     color: rgb(255, 114, 118);
     font-weight: 700;
 }
@@ -122,6 +123,7 @@ body{
     width: 95%;
     margin: 10px;
     border-radius: 25px;
+    padding: 25px;
 }
 
 #answer_diagram_1{
@@ -130,7 +132,9 @@ body{
 
 .correct_answ{
     display: flex;
-    
+    align-items: center;
+    width: 30%;
+    font-weight: 500;
 }
 
 
