@@ -6,7 +6,6 @@ let Dalee = document.querySelector('#check_button_3')
 
 
 
-
 console.log('Script is Loaded')
 
 let questions = [
@@ -20,6 +19,19 @@ let questions = [
 let answerLength = questions[0].answers;
 let numberOfQuestion = 1; 
 let numberOfQuestionSum = 13;
+
+let backBtn = document.querySelector('#check_button_0')
+backBtn.setAttribute('onclick', `location.href='../javascript_quiz_app_${numberOfQuestion-1}/index.html'`)
+if (numberOfQuestion === 1){
+    backBtn.classList.add('disabled_button')
+}
+
+if (numberOfQuestion === numberOfQuestionSum){
+    Dalee.setAttribute('onclick', `location.href='../javascript_result_page/index.html'`)
+} else {
+    Dalee.setAttribute('onclick', `location.href='../javascript_quiz_app_${numberOfQuestion+1}/index.html'`)
+}
+
 
 let stepMarkerPlace = document.querySelector('.step_marker');
 console.log("stepMarkerPlace")

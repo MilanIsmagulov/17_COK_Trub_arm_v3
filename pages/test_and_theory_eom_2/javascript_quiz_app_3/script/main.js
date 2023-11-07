@@ -7,6 +7,7 @@ const collumnInner = document.getElementById('drag4-inner')
 let questionPlc = document.querySelector('#question_text_1')
 
 
+
 let rowList2 = []
 let fieldsList = []
 let fullList2 = []
@@ -18,8 +19,23 @@ let endIndx2;
 let numberOfQuestion = 3; 
 let numberOfQuestionSum = 13;
 
-questionPlc.innerHTML = `<span>${numberOfQuestion}. </span> Установите соответствие между схемой запорного органа и его названием`
 
+let Dalee = document.querySelector('#check_button_3')
+let backBtn = document.querySelector('#check_button_0')
+backBtn.setAttribute('onclick', `location.href='../javascript_quiz_app_${numberOfQuestion-1}/index.html'`)
+if (numberOfQuestion === 1){
+    backBtn.classList.add('disabled_button')
+}
+
+if (numberOfQuestion === numberOfQuestionSum){
+    Dalee.setAttribute('onclick', `location.href='../javascript_result_page/index.html'`)
+} else {
+    Dalee.setAttribute('onclick', `location.href='../javascript_quiz_app_${numberOfQuestion+1}/index.html'`)
+}
+
+
+questionPlc.innerHTML = `<span>${numberOfQuestion}. </span> Установите соответствие между схемой запорного органа и его названием`
+localStorage.setItem('answer_' + numberOfQuestion, JSON.stringify({questionPlace: true}));
 
 let stepMarkerPlace = document.querySelector('.step_marker');
 console.log("stepMarkerPlace")
@@ -161,6 +177,7 @@ function checkAnwser4() {
     fullList2.forEach((item, index) => {
         if (item.children[1].querySelector('.item4')?.innerText.trim() === undefined) {
             item.children[1].classList.add('incorrect')
+            localStorage.setItem('answer_' + numberOfQuestion, JSON.stringify({questionPlace: false}));
             reloadButton.classList.remove('disabled_button')
             nextButton.classList.remove('disabled_button')
             answerButton.classList.add('disabled_button')
@@ -169,12 +186,14 @@ function checkAnwser4() {
 
             if (itemName !== anwserArr4[index]) {
                 item.children[1].classList.add('incorrect')
+                localStorage.setItem('answer_' + numberOfQuestion, JSON.stringify({questionPlace: false}));
                 reloadButton.classList.remove('disabled_button')
                 nextButton.classList.remove('disabled_button')
                 answerButton.classList.add('disabled_button')
             } else {
                 item.children[1].classList.remove('incorrect')
                 item.children[1].classList.add('correct')
+                
                 reloadButton.classList.remove('disabled_button')
                 nextButton.classList.remove('disabled_button')
                 answerButton.classList.add('disabled_button')
@@ -183,6 +202,8 @@ function checkAnwser4() {
     });
 }
 
+
+
 function addEventListeners4() {
     const itemElem = document.querySelectorAll('.item4');
     const fieldsElem = document.querySelectorAll('.field');
@@ -190,20 +211,12 @@ function addEventListeners4() {
 
     itemElem.forEach((item) => {
         item.draggable = true;
-        // item.addEventListener('dragstart', dragStart3);
-        // item.addEventListener('dragend', dragEnd3);
     });
     fieldsElem.forEach((elem) => {
-        // elem.addEventListener('dragover', dragOver3);
-        // elem.addEventListener('dragenter', dragEnter3);
-        // elem.addEventListener('dragleave', dragLeave3);
-        // elem.addEventListener('drop', dragDrop3);
+
     });
     rowElem.forEach((elem) => {
-        // elem.addEventListener('dragover', dragOver3);
-        // elem.addEventListener('dragenter', dragEnter3);
-        // elem.addEventListener('dragleave', dragLeave3);
-        // elem.addEventListener('drop', dragDrop3);
+
     })
 }
 

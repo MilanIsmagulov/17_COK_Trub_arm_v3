@@ -21,6 +21,19 @@ let answerLength = questions[0].answers;
 let numberOfQuestion = 12; 
 let numberOfQuestionSum = 13;
 
+let backBtn = document.querySelector('#check_button_0')
+backBtn.setAttribute('onclick', `location.href='../javascript_quiz_app_${numberOfQuestion-1}/index.html'`)
+if (numberOfQuestion === 1){
+    backBtn.classList.add('disabled_button')
+}
+
+if (numberOfQuestion === numberOfQuestionSum){
+    Dalee.setAttribute('onclick', `location.href='../javascript_result_page/index.html'`)
+} else {
+    Dalee.setAttribute('onclick', `location.href='../javascript_quiz_app_${numberOfQuestion+1}/index.html'`)
+}
+
+
 let stepMarkerPlace = document.querySelector('.step_marker');
 console.log("stepMarkerPlace")
 for (let i = 0; i < numberOfQuestion; i++){
@@ -52,69 +65,10 @@ for (let question of questions){
     let p = document.createElement('p');
     p.innerHTML = '<span>' + numberOfQuestion + '. ' + '</span>' +  question.text;
     div.appendChild(p);
-    // let form = document.createElement('form');
-    // testAnswers.appendChild(form);
-    // form.dataset.right = question.right;
+
 }
 
-// let j = 0;
-// let a = 0;
-//     for (let answer of question.answers) {
-//         let divInp = document.createElement('div');
-//         divInp.classList = ('answer_div');
-//         divInp.setAttribute('id', 'answer_div');
-//         form.appendChild(divInp);
-//         let input = document.createElement('input');
-//         input.type = 'radio';
-//         input.name = i;
-//         input.dataset.answer = j++;
-//         divInp.appendChild(input);
-//         let answ = document.createElement('p');
-//         answ.innerHTML = answer;
-//         divInp.appendChild(answ);
-//     };
-// };
 
-// let chekBtn = document.querySelector('#check_button_1');
-//     chekBtn.addEventListener('click', function(){
-//         let forms = document.querySelectorAll('#answers_buttons1 form');
-//         for (let form of forms){
-//             form.classList.remove('correct');
-//             form.classList.remove('incorrect');
-//             let inputs = form.querySelectorAll('input');
-//             for (let input of inputs){
-//                 if (input.checked){
-//                     let disButton = document.querySelector('#check_button_1');
-//                     if (input.dataset.answer == form.dataset.right){
-//                         localStorage.setItem('answer_' + numberOfQuestion, JSON.stringify({questionPlace: true}));
-//                         disButton.classList.add('disabled_button');
-//                         Povtor.classList.remove('disabled_button');
-//                         Dalee.classList.remove('disabled_button');
-
-//                         form.children[input.dataset.answer].classList.add('correct');
-//                         for (let i = 0; i < answerLength.length; i++){
-//                             form.children[i].classList.add('incorrect2');
-//                         }
-//                         for (let i = 0; i < answerLength.length; i++){
-//                             form.children[i].children[0].disabled = true;
-//                         }
-                        
-//                     }else{
-//                         localStorage.setItem('answer_' + numberOfQuestion, JSON.stringify({questionPlace: false}));
-//                         disButton.classList.add('disabled_button');
-//                         Povtor.classList.remove('disabled_button');
-//                         Dalee.classList.remove('disabled_button');
-//                         let wrAns = input.dataset.answer
-//                         form.children[wrAns].classList.add('incorrect');
-//                         for (let i = 0; i <= 3; i++){
-//                             form.children[i].children[0].disabled = true;
-//                         }
-//                     };
-//                 break;
-//             };
-//         };
-//     };
-// });
 
 let openPopUpButton = document.querySelector('.zoom_popup')
 let closePopUpButton = document.querySelector('#close_popup_button_1')

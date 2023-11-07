@@ -7,7 +7,7 @@ console.log('Script is Loaded')
 
 let questions = [
     {
-        text: 'Изучите порядок действий при замене сальникового уплотнения задвижек',
+        text: 'Изучите последовательность действий при замене паронитовой прокладки на задвижке',
         right: 0,
         answers: ['для управления потоками рабочих сред путём изменения проходного сечения внутренней части трубопровода', 'для изменения основных параметров транспортируемых жидкостей и газов', 'для измерения основных параметров транспортируемых жидкостей и газов',],
     },
@@ -16,6 +16,18 @@ let questions = [
 let answerLength = questions[0].answers;
 let numberOfQuestion = 7; 
 let numberOfQuestionSum = 13;
+
+let backBtn = document.querySelector('#check_button_0')
+backBtn.setAttribute('onclick', `location.href='../javascript_quiz_app_${numberOfQuestion-1}/index.html'`)
+if (numberOfQuestion === 1){
+    backBtn.classList.add('disabled_button')
+}
+
+if (numberOfQuestion === numberOfQuestionSum){
+    Dalee.setAttribute('onclick', `location.href='../javascript_result_page/index.html'`)
+} else {
+    Dalee.setAttribute('onclick', `location.href='../javascript_quiz_app_${numberOfQuestion+1}/index.html'`)
+}
 
 let stepMarkerPlace = document.querySelector('.step_marker');
 console.log("stepMarkerPlace")
@@ -62,10 +74,7 @@ openPopUpButton2.addEventListener('click', function(){
     popUpWindow2.classList.remove('close')
 })
 
-// openPopUpButton.addEventListener('click', function(){
-//     popUpWindow.classList.remove('close')
 
-// })
 
 closePopUpButton.addEventListener('click', function(){
     popUpWindow.classList.add('close')

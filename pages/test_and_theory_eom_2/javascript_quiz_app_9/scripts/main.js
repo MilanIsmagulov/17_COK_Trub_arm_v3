@@ -20,9 +20,25 @@ let questions = [
     },
 ];
 
+let correctAnswer = questions[0].right
+
 let answerLength = questions[0].answers;
 let numberOfQuestion = 9; 
 let numberOfQuestionSum = 13;
+let numberOfEOM = 2;
+
+let backBtn = document.querySelector('#check_button_0')
+backBtn.setAttribute('onclick', `location.href='../javascript_quiz_app_${numberOfQuestion-1}/index.html'`)
+if (numberOfQuestion === 1){
+    backBtn.classList.add('disabled_button')
+}
+
+if (numberOfQuestion === numberOfQuestionSum){
+    Dalee.setAttribute('onclick', `location.href='../javascript_result_page/index.html'`)
+} else {
+    Dalee.setAttribute('onclick', `location.href='../javascript_quiz_app_${numberOfQuestion+1}/index.html'`)
+}
+
 
 let stepMarkerPlace = document.querySelector('.step_marker');
 console.log("stepMarkerPlace")
@@ -108,6 +124,10 @@ let chekBtn = document.querySelector('#check_button_1');
                         Povtor.classList.remove('disabled_button');
                         Dalee.classList.remove('disabled_button');
                         let wrAns = input.dataset.answer
+                        if(numberOfEOM != 3){
+                            form.children[correctAnswer].classList.add('correct');
+                        }
+                        
                         form.children[wrAns].classList.add('incorrect');
                         for (let i = 0; i <= 3; i++){
                             form.children[i].children[0].disabled = true;

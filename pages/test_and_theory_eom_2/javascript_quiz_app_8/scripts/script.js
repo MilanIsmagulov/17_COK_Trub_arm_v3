@@ -17,7 +17,10 @@ function reloadPage(){
 let numberOfQuestion = 8; 
 let numberOfQuestionSum = 13;
 
-backButton.setAttribute('onclick',`location.href='../javascript_quiz_app_${numberOfQuestion-1}/index.html'`)
+if (numberOfQuestion !== 1){
+    backButton.setAttribute('onclick',`location.href='../javascript_quiz_app_${numberOfQuestion-1}/index.html'`)
+}
+
 if (numberOfQuestion != numberOfQuestionSum){
     nextButton.setAttribute('onclick',`location.href='../javascript_quiz_app_${numberOfQuestion+1}/index.html'`)
 } else {

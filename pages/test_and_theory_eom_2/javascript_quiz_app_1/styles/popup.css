@@ -1,5 +1,5 @@
 .popup_text{
-    height: 600px;
+    height: 90%;
     overflow-y: auto;
     scroll-snap-align: start;
     padding: 15px;
@@ -311,10 +311,11 @@
         height: 50vh;
     }
     .popup_text{
+
         display: flex;
         align-items: flex-start;
         justify-content: flex-start;
         text-align: start;
-        height: 500px;
+ 
     }
 }

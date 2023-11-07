@@ -17,13 +17,6 @@ body{
 
 }
 
-.question_part p{
-    margin-top: 15px;
-    color: #000;
-    font-size: 25px;
-    font-weight: 500;
-}
-
 .main_window{
     height: 100vh;
 }
@@ -37,6 +30,7 @@ body{
     color: white;
     background-color: black;
 }
+
 
 .black_header a{
     color: white;
@@ -56,13 +50,23 @@ body{
     color: black;
 }
 
-.question_part #question{
+
+
+.question_part{
     margin: 25px;
     width: 70%;
     font-size: 30px;
-    padding: 25px;
+    padding: 1vh;
+    padding-left: 1vw;
     color: rgb(255, 114, 118);
     font-weight: 700;
+}
+
+.question_part p{
+    margin-top: 10px;
+    font-size: 25px !important;
+    color: #000;
+    font-weight: 500;
 }
 
 .question_part div span{
@@ -119,6 +123,7 @@ body{
     width: 95%;
     margin: 10px;
     border-radius: 25px;
+    padding: 25px;
 }
 
 #answer_diagram_1{
@@ -127,7 +132,9 @@ body{
 
 .correct_answ{
     display: flex;
-    
+    align-items: center;
+    width: 30%;
+    font-weight: 500;
 }
 
 
@@ -151,18 +158,18 @@ body{
     color: rgb(255, 114, 118);
 }
 
+
 .button_part{
     display: flex;
-    position: absolute;
     bottom: 35px;
-    width: 95vw;
+    width: 100%;
     padding: 10px;
     align-items: center;
-    margin-top: 60px;
-    margin-left: 50px;
-    margin-right: 50px;
-    justify-content: space-between;
+    margin-top: 6vh;
+    padding-bottom: 5vh;
+    justify-content: flex-end;
 }
+
 
 .button_side{
     display: flex;

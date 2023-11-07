@@ -394,7 +394,39 @@ input:disabled {
         font-size: 15px;
         border-radius: 10px;
     }
+
+    .theory_eom p{
+        font-size: 25px;
+    }
+
+    .theory_eom img{
+        height: 30vh;
+        margin: 15px;
+        margin-left: 15px;
+    }
+
+    .upper_img{
+
+        flex-direction: column;
+    }
+
+    .upper_img img{
+        height: 30vh;
+        width: 50vh;
+    }
     
+    .right_first p strong{
+        font-size: 25px;
+    }
+
+    .right_first span{
+        font-size: 18px;
+    }
+
+    .popup_content {
+        min-height: 55vh;
+    }
+
     .content{
         margin-right: 0;
     }
