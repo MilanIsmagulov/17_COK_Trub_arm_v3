@@ -313,7 +313,20 @@ td{
     .black_header{
         height: 170px;
     }
+    .theory_eom h1{
+        font-size: 30px !important;
+    }
+    .theory_eom p{
+        font-size: 25px !important;
+    }
+    .first span{
+        font-size: 25px !important;
+    }
 
+    .first img {
+        padding: 20px;
+        width: 300px;
+    }
 
     .black_header h1{
         width: 50%;
@@ -331,16 +344,11 @@ td{
 
         height: 100%;
     }
-    .popup_body{
-        height: 50vh;
-    }
-    .popup_content {
-        height: 50vh;
-    }
+
     .popup_text{
         display: flex;
-        align-items: center;
-        height: 500px;
+        align-items: flex-start;
+
     }
 }
 
@@ -386,6 +394,15 @@ td{
 
     .black_header h1{
         width: 70%;
+    }
+
+    .first span{
+        width: 85%;
+    }
+
+
+    .popup_content {
+        min-height: 60vh !important;
     }
 
     .step_marker_and_buttons{

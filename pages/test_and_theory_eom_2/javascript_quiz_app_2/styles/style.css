@@ -203,6 +203,12 @@ input:disabled {
     border-radius: 15px;
 }
 
+.zoom_popup img{
+    margin: 0 !important;
+    width: 30px !important;
+    height: 30px !important;
+}
+
 .theory_eom p{
     color: #000;
     font-weight: 500;
@@ -385,6 +391,15 @@ input:disabled {
         height: 30vh;
         margin: 15px;
         margin-left: 30px;
+    }
+
+    .popup_content {
+        min-height: 60vh;
+    }
+    .popup_text {
+        display: flex;
+        align-items: flex-start;
+        height: 85%;
     }
 
 }

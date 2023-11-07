@@ -836,3 +836,30 @@ input:disabled {
   font-weight: 900;
   margin-right: 15px;
 }
+
+.popup_text::-webkit-scrollbar-track
+{   
+    border-radius: 10px;
+	background-color: #dadada;
+	border-radius: 0px;
+    padding: 15px;
+    width: 25px;
+}
+
+.popup_text::-webkit-scrollbar
+{
+    border-radius: 10px;
+	width: 10px;
+	background-color: #F5F5F5;
+    padding: 15px;
+    width: 15px;
+}
+
+.popup_text::-webkit-scrollbar-thumb
+{   
+
+	background-color: rgba(0, 0, 0, .2);
+	border-radius: 10px;
+	background-image: rgba(0, 0, 0, .2);
+    width: 15px;
+}

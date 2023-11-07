@@ -82,6 +82,12 @@ body{
     margin-right: 15px;
 }
 
+.zoom_popup img{
+    margin: 0 !important;
+    width: 30px !important;
+    height: 30px !important;
+}
+
 .first_row{
     width: 50%;
 }
@@ -435,5 +441,10 @@ input:disabled {
     }
     .second{
         flex-direction: column;
+    }
+    .popup_text {
+        display: flex;
+        align-items: flex-start;
+        height: 85%;
     }
 }
