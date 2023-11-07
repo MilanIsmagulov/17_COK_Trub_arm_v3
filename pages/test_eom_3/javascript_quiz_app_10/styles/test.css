@@ -169,8 +169,10 @@ body{
     margin-left: 25px;
     margin-right: 25px;
     align-items: flex-end;
+    margin-top: 3vh;
     justify-content: space-between;
     display: flex;
+    padding-bottom: 50px;
 }
 
 .main_buttons button{
@@ -277,10 +279,4 @@ body{
     .main_buttons button {
         width: 130px;
     }
-}
-
-.step_marker_and_buttons{
-    position: absolute;
-    bottom: 50px;
-    width: 96%;
 }

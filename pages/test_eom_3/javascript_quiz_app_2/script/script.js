@@ -1,44 +1,57 @@
+
 // dran&drop 2
 const anwserArr2 = ['мембранные разрывные устройства', 'задвижка', 'клапаны регулирующие', 'дроссели', 'кран', 'вентиль', 'клапаны предохранительные', 'клапаны перепускные']; //Ответы
 const countCol = 3; //Колличесвто колонн
-const correctAnwser1 = ['кран', 'вентиль' , 'задвижка'] //Правильные варианты. Кол-во масивов в соотвествиие с кол-ом колонн
-const correctAnwser2 = ['клапаны регулирующие', 'дроссели',] //correctAnwser1 - 1 колонна и т.д.
-const correctAnwser3 = ['клапаны предохранительные', 'мембранные разрывные устройства', 'клапаны перепускные']
-const correctAnwsers = [
-    correctAnwser1, 
-    correctAnwser2,
-    correctAnwser3
-] //Сюда надо тоже добавить
+// Правильные ответы для каждой колонки
+const correctAnswers = [
+    ['кран', 'вентиль' , 'задвижка'],
+    ['клапаны регулирующие', 'дроссели'],
+    ['клапаны предохранительные', 'мембранные разрывные устройства', 'клапаны перепускные']
+    // Правильные ответы для второй колонки
+];
+
+const nameCol1 = 'Запорная'
+const nameCol2 = 'Регулирующая'
+const nameCol3 = 'Предохранительная'
 
 
 
+// Создаем объект для быстрого поиска правильной колонки для каждого ответа
+const answerToColumn = {};
+correctAnswers.forEach((answers, columnIndex) => {
+    answers.forEach(answer => {
+        answerToColumn[answer] = columnIndex + 1;
+    });
+});
 
 
 
+let numOfQuestion = document.querySelector('#number_of_question')
 
 const collumns = document.getElementById('columns')
 const row = document.getElementById('row')
 
 
+let numberOfCOK = 17;
+let numberOfEOM = 3;
+let numberOfQuestion = 2;
+let numberOfQuestionSum = 10;
 let areaIndex;
 let startIndex;
 let dragElem = null;
 let rowArr = []
-
 let data = {}
+// Верный ли ответ?
+let correct = false; 
+
+
+numOfQuestion.innerHTML = numberOfQuestion + '. '
 
 init2()
 
-function init2() {
-    createColumns();
-    localStorage.getItem('data3') ? loadList2() : createList2()
-}
-
-let numberOfQuestion = 2; 
-let numberOfQuestionSum = 10;
 
 let stepMarkerPlace = document.querySelector('.step_marker');
-console.log("stepMarkerPlace")
+
 for (let i = 0; i < numberOfQuestion; i++){
     let markers = document.createElement('img');
     markers.src = "./content/radio_button_blue.svg";
@@ -51,54 +64,42 @@ for (let i = 0; i < numberOfQuestionSum-numberOfQuestion; i++){
     stepMarkerPlace.appendChild(markers);
 }
 
-let popUpWindow = document.querySelector('#popup1')
-let closePopUpButton = document.querySelector('#close_popup_button_1')
-let openPopUpButton = document.querySelector('#number_marker_img_1');
-openPopUpButton.addEventListener('click', function(){
-    popUpWindow.classList.remove('close')
-})
-closePopUpButton.addEventListener('click', function(){
-    popUpWindow.classList.add('close')
-})
-
-
-
-
-let questionText = 'Установите соответствие между названиями трубопроводной арматуры и признаками классификации';
-
-let stepPlaceDescription = document.querySelector('#description_place_1');
+let stepPlaceDescription = document.querySelector('.number_description');
 stepPlaceDescription.innerHTML = numberOfQuestion + '/' + numberOfQuestionSum;
 
-let questionPlace = document.querySelector('#question_place_1')
-questionPlace.innerHTML = '<span>' + numberOfQuestion + '. ' + '</span>' + questionText;
 
-let descriptionPlace = document.querySelector('#description_place_1');
-descriptionPlace.innerHTML = '<strong>' + numberOfQuestion + '/' + numberOfQuestionSum + '</strong>';
+function init2() {
+    createColumns();
+    localStorage.getItem('data'+numberOfCOK+numberOfEOM+0+numberOfQuestion+numberOfQuestionSum) ? loadList2() : createList2()
+}
 
+
+
+let nameColPlc = document.querySelector('.body-inner')
+let nameOfCol = document.createElement('span')
+let nameOfColDiv = document.createElement('div')
+nameOfColDiv.classList.add('spandivcol')
+nameOfCol.classList.add('spancol')
+nameOfCol.innerHTML = nameCol1
+let nameOfCol2 = document.createElement('span')
+nameOfCol2.classList.add('spancol', 'secondcol')
+nameOfCol2.innerHTML = nameCol2
+let nameOfCol3 = document.createElement('span')
+nameOfCol3.classList.add('spancol', 'thirdcol')
+nameOfCol3.innerHTML = nameCol3
+nameColPlc.appendChild(nameOfColDiv)
+nameOfColDiv.appendChild(nameOfCol3)
+nameOfColDiv.appendChild(nameOfCol2)
+nameOfColDiv.appendChild(nameOfCol)
 function createColumns() {
-    let columnDiv = document.querySelector('.drag2')
-    let columnHeaderDiv = document.createElement('div')
-    columnHeaderDiv.classList.add('column_headerd_div')
-    let columnHeader = document.createElement('span')
-    let columnHeader2 = document.createElement('span')
-    let columnHeader3 = document.createElement('span')
-    columnHeader.innerHTML = 'Запорная'
-    columnHeader2.innerHTML = 'Регулирующая'
-    columnHeader3.innerHTML = 'Предохранительная'
-    columnHeaderDiv.appendChild(columnHeader) 
-    columnHeaderDiv.appendChild(columnHeader2) 
-    columnHeaderDiv.appendChild(columnHeader3) 
-    columnDiv.appendChild(columnHeaderDiv)
-
-
     for(let i = 0; i < countCol; i++)  {
         const col = document.createElement('div')
 
         col.classList.add('col')
         col.innerHTML = `
-        <ul class='col-ul' index='${i}'></ul>
+        <ul class='col-ul' id='col${i+1}'></ul>
         `;
-        col.id = 'col_ul_' + i;
+
         data[i] = []
         collumns.appendChild(col)
     }
@@ -108,20 +109,27 @@ function createColumns() {
 }
 
 function createList2() {
+    data[areaIndex] = [];
     anwserArr2.forEach((item, index) => {
-        const listItem = document.createElement('li');
+        var listItem = document.createElement('li');
 
         listItem.setAttribute('id', index);
-        listItem.classList.add('item2');
+        listItem.classList.add('item');
         listItem.draggable = 'true';
         listItem.innerText = item
 
+
+
         data[areaIndex].push(listItem.innerText)
+
         row.appendChild(listItem)
+
     })
-    localStorage.setItem('data3', JSON.stringify(data))
+    localStorage.setItem('data'+numberOfCOK+numberOfEOM+0+numberOfQuestion+numberOfQuestionSum, JSON.stringify(data))
 
     addEventListeners2();
+    
+
 }
 
 function loadList2() {
@@ -144,7 +152,6 @@ function loadList2() {
         data[key].map(key2 => {
             tempArr.map(key3 => {
                 document.querySelectorAll('.col-ul').forEach((item, index) => {
-                    
                     if (key == index && key2 === key3.innerText) {
                         item.appendChild(key3)
                     }
@@ -168,7 +175,7 @@ function loadList2() {
 }
 
 function fromStore2() {
-    data = JSON.parse(localStorage.getItem('data3'))
+    data = JSON.parse(localStorage.getItem('data'+numberOfCOK+numberOfEOM+0+numberOfQuestion+numberOfQuestionSum))
 }
 
 
@@ -208,73 +215,68 @@ function refreshData(s, e) {
     data[e].push(dragElem.innerText)
     data[s] = data[s].filter((i) => i !== dragElem.innerText)
 
-    localStorage.setItem('data3', JSON.stringify(data))
+    localStorage.setItem('data'+numberOfCOK+numberOfEOM+0+numberOfQuestion+numberOfQuestionSum, JSON.stringify(data))
 }
 
-let nextBtn = document.querySelector('#check_button_3')
-let ansBtn = document.querySelector('#check_button_1')
-let refreshBtn = document.querySelector('#check_button_4')
+let checkAnswerBtn = document.querySelector('#check_button_1')
 
-function checkAnwser2() {
-    fromStore2();
+let rowsElement = document.querySelector('#row')
 
-    const convertedArr = Object.entries(data)
+checkAnswerBtn.addEventListener('click', function(){
+    console.log(Object.keys(rowsElement.children).length)
+    if (Object.keys(rowsElement.children).length === 0){
+        checkAnswer2()
+    }
+})
 
-    convertedArr.map((item, index) => {
-        item.splice(0, 1)
-        item.map((item2, index2) => {
-            const tempArr = item2.sort()
-            correctAnwsers.map((item3, index3) => {
-                const tempArr2 = item3.sort()
-                const resCol = document.querySelectorAll(`.col-ul[index="${index3}"]`)
-                resCol.forEach((el) => {
-                    if (index === index3 && JSON.stringify(tempArr) === JSON.stringify(tempArr2)) {
-                        localStorage.setItem('answer_' + numberOfQuestion, JSON.stringify({questionPlace: true}));
-                        el.parentElement.classList.remove('incorrect')
-                        el.parentElement.classList.add('correct')
-                        refreshBtn.classList.remove('disabled_button')
-                        nextBtn.classList.remove('disabled_button')
-                        ansBtn.classList.add('disabled_button')
-                    } else if (index === index3 && JSON.stringify(tempArr) !== JSON.stringify(tempArr2)) {
-                        localStorage.setItem('answer_' + numberOfQuestion, JSON.stringify({questionPlace: false}));
-                        el.parentElement.classList.add('incorrect')
-                        refreshBtn.classList.remove('disabled_button')
-                        nextBtn.classList.remove('disabled_button')
-                        ansBtn.classList.add('disabled_button')
-                    }
-                })
-            })
-        })
-    })
-}
 
-function refreshAnwser2() {
-    const columns = document.querySelectorAll('.col-ul')
-    const items = document.querySelectorAll('.item2')
-    let lastKey;
-    window.location.reload();
-    Array.prototype.diff = function(a) {
-        return this.filter(function(i){return a.indexOf(i) < 0;});
-    };
+function checkAnswer2() {
+    let uncorrect = 0;
+    // Проходим по каждой колонке
+    for (let i = 1; i <= correctAnswers.length; i++) {
+        const column = document.getElementById(`col${i}`);
+        const items = column.querySelectorAll('.item2');
 
-    
-    for (key in data) {
-        if (!data.hasOwnProperty(Number(key) + 1)) {
-            lastKey = key
-        } else {
-            data[key] = []
-        }
+
+        // Проходим по каждому элементу в колонке
+        items.forEach((item) => {
+            const itemValue = item.textContent || item.innerText;
+
+            // Используем объект для быстрой проверки правильности колонки
+            if (answerToColumn[itemValue] === i) {
+                //Верно
+                checkBtn.classList.add('disabled_button')
+                nextBtn.classList.remove('disabled_button')
+                if (numberOfEOM !== 3){
+                    refreshBtn.classList.remove('disabled_button')
+                }
+                item.style.backgroundColor = 'rgb(189, 255, 189)';
+            } else {
+                //Неверно
+                checkBtn.classList.add('disabled_button')
+                nextBtn.classList.remove('disabled_button')
+                if (numberOfEOM !== 3){
+                    refreshBtn.classList.remove('disabled_button')
+                }
+                item.style.backgroundColor = 'rgb(255, 185, 185)';
+                uncorrect++;
+                localStorage.setItem('answer_' + numberOfQuestion, JSON.stringify({questionPlace: false}));
+            }
+        });
     }
 
-    anwserArr2.diff(data[`${lastKey}`]).map((item) => {
-        data[`${lastKey}`].push(item)
-    })
+    if (uncorrect == 0) correct = true
 
-    items.forEach((item, index) => {
-        row.append(item)
-    })
+    
+}
 
-    localStorage.setItem('data3', JSON.stringify(data))
+localStorage.setItem('answer_' + numberOfQuestion, JSON.stringify({questionPlace: true}));
+
+function refreshAnwser2() {
+
+
+
+    location.reload();
 }
 
 function addEventListeners2() {
@@ -283,19 +285,34 @@ function addEventListeners2() {
 
     items2.forEach((item) => {
         item.draggable = true;
-        item.addEventListener('dragstart', startDragBlock);
-        item.addEventListener('dragend', endDragBlock);
+
     });
     colms.forEach((col) => {
-        col.addEventListener('dragover', dragColOver);
-        col.addEventListener('dragenter', dragColEnter);
-        col.addEventListener('dragleave', dragColLeave);
-        col.addEventListener('drop', dropColBox);
+
     });
 }
 
+let backBtn = document.querySelector('#check_button_0')
+let checkBtn = document.querySelector('#check_button_1')
+let refreshBtn = document.querySelector('#check_button_2')
+let nextBtn = document.querySelector('#check_button_3')
+let popUpWindow2 = document.querySelector('#popup2')
 
-let colHeader1 = document.querySelector('#col_ul_0')
-let colHeader2 = document.querySelector('#col_ul_1')
-let colHeader3 = document.querySelector('#col_ul_2')
+function openPopUp2() {
+    popUpWindow2.classList.remove('close')
+}
 
+function closePopUp2() {
+    popUpWindow2.classList.add('close')
+}
+
+backBtn.setAttribute('onclick', `location.href='../javascript_quiz_app_${numberOfQuestion-1}/index.html'`)
+if (numberOfQuestion === 1){
+    backBtn.classList.add('disabled_button')
+}
+
+if (numberOfQuestion === numberOfQuestionSum){
+    nextBtn.setAttribute('onclick', `location.href='../javascript_result_page/index.html'`)
+} else {
+    nextBtn.setAttribute('onclick', `location.href='../javascript_quiz_app_${numberOfQuestion+1}/index.html'`)
+}

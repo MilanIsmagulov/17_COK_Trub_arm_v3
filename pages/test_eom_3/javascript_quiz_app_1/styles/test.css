@@ -280,7 +280,6 @@ body{
 }
 
 .step_marker_and_buttons{
-    position: absolute;
-    bottom: 50px;
-    width: 96%;
+    margin-top: 8vh;
+    padding-bottom: 50px;
 }

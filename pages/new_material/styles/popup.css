@@ -1,4 +1,5 @@
 .popup_text{
+    height: 90%;
     align-items: flex-start;
     flex-direction: column;
     padding: 10px;

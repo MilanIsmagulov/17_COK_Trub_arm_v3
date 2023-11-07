@@ -12,8 +12,9 @@ a{
 }
 
 body{
+
     background-color: rgb(222, 235, 247);
-    height: 100vh;
+    background-size: contain;
 }
 
 .container{
@@ -273,6 +274,13 @@ body{
     font-size: 22px;
 }
 
+td img {
+    min-width: 50px;
+    max-width: 65px;
+    margin-right: 10px;
+    padding-right: 10px;
+}
+
 
 
 @media (max-width: 1445px){
@@ -295,11 +303,17 @@ body{
     }
 }
 
-@media (max-width: 1131px){
+@media (max-width: 1180px){
+
+    .main_window{
+        margin: 0;
+        padding: 10px;
+    }
+
     .content img{
         margin-left: 0;
         margin-right: 0;
-        height: 300px;
+        width: 90%;
     }
 
     .text_content{
@@ -308,18 +322,6 @@ body{
 
     .first_part{
         flex-direction: column;
-    }
-}
-
-@media (max-width: 1131px){
-    .content img{
-        margin-left: 0;
-        margin-right: 0;
-        height: auto;
-    }
-
-    .text_content{
-        margin-top: 25px;
     }
 
     .content{
@@ -333,8 +335,15 @@ body{
     .anim_buttons a div {
         margin-bottom: 0;
     }
-    
+    td img {
+        min-width: 50px;
+        max-width: 65px;
+        margin-right: 10px;
+        padding-right: 10px;
+    }
 }
+
+
 
 @media (max-width: 618px){
     .black_header{
@@ -400,8 +409,3 @@ body{
     }
 }
 
-@media (max-width: 456px){
-    .text_content p{
-        font-size: 20px;
-    }
-}

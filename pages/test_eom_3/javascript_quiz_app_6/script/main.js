@@ -38,6 +38,7 @@ let mainQuestions = [
 
 let numberOfQuestion = 6; 
 let numberOfQuestionSum = 10;
+let numberOfEOM = 3;
 
 
 // Цикл создающий модальные окна, также пушит вопросы и ответы
@@ -262,7 +263,7 @@ for (i = 0; i < mainQuestions.length; i++){
     let nextBtn1 = document.createElement('button')
     nextBtn1.id = 'check_button_1'
     nextBtn1.innerText = 'Назад'
-    nextBtn1.setAttribute('onclick', "location.href='../javascript_quiz_app_5/index.html'")
+    nextBtn1.setAttribute('onclick', `location.href='../javascript_quiz_app_${numberOfQuestion-1}/index.html'`)
     divBtn.appendChild(nextBtn1)
 
 
@@ -282,13 +283,32 @@ for (i = 0; i < mainQuestions.length; i++){
     nextBtn.id = 'check_button_3'
     nextBtn.innerText = 'Далее'
     nextBtn.classList.add('disabled_button')
-    nextBtn.setAttribute('onclick', "location.href='../javascript_quiz_app_7/index.html'")
+    
+    if (numberOfQuestion !== numberOfQuestionSum){
+        nextBtn.setAttribute('onclick', `location.href='../javascript_quiz_app_${numberOfQuestion+1}/index.html'`)
+    } else {
+        nextBtn.setAttribute('onclick', `location.href='../javascript_result_page/index.html'`)
+    }
+
 
     divBtn.appendChild(nextBtn)
+    let checkButton = document.querySelector('#check_button_0')
+    checkButton.disabled = true
 
-
-
-
+    let formDivInput = document.querySelectorAll('input')
+    formDivInput.forEach(input => {
+        input.addEventListener('click', function(){
+            if (input.checked === true){
+                checkButton.disabled = false
+            }
+        })
+        input.addEventListener('click', function(){
+            if (input.checked === false){
+                checkButton.disabled = true
+            }
+        })
+    })
+    
     //Добавление ивента для проверки ответов
 
     checkAnswerBtn.addEventListener('click',function(event)
@@ -356,7 +376,9 @@ for (i = 0; i < mainQuestions.length; i++){
                     localStorage.setItem('answer_' + counter + '_' + numberOfQuestion, JSON.stringify({questionPlace: true}));
                     elem.classList.add('correct')
                     nextBtn.classList.remove('disabled_button')
-                    nextBtn2.classList.remove('disabled_button')
+                    if (numberOfEOM != 3){
+                        nextBtn2.classList.remove('disabled_button')
+                    }
                     checkAnswerBtn.classList.add('disabled_button')
                 }
                 else
@@ -365,7 +387,9 @@ for (i = 0; i < mainQuestions.length; i++){
                     elem.classList.add('incorrect')
                     rightcheck=false
                     nextBtn.classList.remove('disabled_button')
-                    nextBtn2.classList.remove('disabled_button')
+                    if (numberOfEOM != 3){
+                        nextBtn2.classList.remove('disabled_button')
+                    }
                     checkAnswerBtn.classList.add('disabled_button')
 
                 }
@@ -375,7 +399,11 @@ for (i = 0; i < mainQuestions.length; i++){
                 //Выделение правильных ответов, если они не выбраны
                 if (mainQuestions[question_number].right.indexOf(counter) != -1){
                     localStorage.setItem('answer_' + counter + '_' + numberOfQuestion, JSON.stringify({questionPlace: false}));
-                    elem.classList.add('incorrect')
+                    if (numberOfEOM != 3) {
+                        elem.classList.add('correct')
+                    } else {
+                        elem.classList.add('correct2')
+                    }
                 }
             }
             counter++
@@ -434,6 +462,15 @@ function showQuestion(i){
     popUpArr[i].classList.remove('closed');  
 };
 
+function openPopUp2(){
+    let popupWindow = document.querySelector('#popup2')
+    popupWindow.classList.remove('close')
+}
+
+function closePopUp2(){
+    let popupWindow = document.querySelector('#popup2')
+    popupWindow.classList.add('close')
+}
 
 
 //Сложение очков, для получения счёта( я не знаю зачем тут нужен был массив)

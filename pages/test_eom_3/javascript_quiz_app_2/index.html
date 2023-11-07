@@ -3,28 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./script/Sortable.js"></script>
+
     <script src="./script/script.js" defer></script>
+    <script src="./script/script2.js" defer></script>
     <link rel="stylesheet" href="./style/style.css">
     <link rel="stylesheet" href="./style/main.css">
-    <title>Таблица соответствия</title>
+    <title>Трубопроводная арматура
+    </title>
 </head>
 <body>
     <div class="black_header">
         <h1>
-            ЭОМ 3: Тесты
+            Трубопроводная арматура
         </h1>
         <div class="links_black_header">
-            <a href="../../../index.html">На главную</a>
+            <a href="#">На главную</a>
             <a class="disabled_button" href="#">Назад</a>
         </div>
     </div>
     <div class="head_text">
         <div class="questions" id="question_number_1">
-            <h2 id="question_place_1"><span>2. </span>Установите соответствие между названиями трубопроводной арматуры и признаками классификации</h2>
+            <h2><span id="number_of_question">9. </span>Установите соответствие между названиями трубопроводной арматуры и признаками классификации:</h2>
         </div>
         <div class="number_marker">
-            <img id="number_marker_img_1" src="./content/description.svg" alt="description">
-            <p id="description_place_1">1/10</p>
+            <img style="cursor: pointer;" onclick="openPopUp2()" src="./content/description.svg" alt="description">
+            <p  style="font-weight: 700;" class="number_description">1/10</p>
         </div>
     </div>
     <div class="main_window">
@@ -40,41 +44,41 @@
 
             </div>
             <div class="buttons_div">
-                <button id="check_button_0" onclick="location.href='../javascript_quiz_app_1/index.html'">
+                <button id="check_button_0">
                     Назад
                 </button>
-                <button id="check_button_1" onclick="checkAnwser2()">
+                <button id="check_button_1">
                     Ответить
                 </button>
-                <button id="check_button_4" class="disabled_button" onclick="refreshAnwser2()">
+                <button id="check_button_2" class="disabled_button" onclick="refreshAnwser2()">
                     Повторить
                 </button>
-                <button id="check_button_2" class="disabled_button">
-                    Повторить
-                </button>
-                <button id="check_button_3" class="disabled_button" onclick="location.href='../javascript_quiz_app_3/index.html'">
+                <button id="check_button_3" class="disabled_button">
                     Далее
                 </button>
+
             </div>
         </div>
-        <div id="popup1" class="popup close">
+        <div id="popup2" class="popup close">
             <div class="popup_body">
                 <div class="popup_content">
                     <div class="popup_header">
                         <h3> </h3>
-                        <button id="close_popup_button_1"><img src="./content/close.svg" alt="close"></button>
+                        <button onclick="closePopUp2()"><img src="./content/close.svg" alt="close"></button>
                     </div>
                     <div class="popup_text">
-                        <h3>1. Укажите назначение трубопроводной арматуры</h3>
-                        <h3>2. Установите соответствие между названиями трубопроводной арматуры и признаками классификации</h3>
-                        <h3>3. Какими двумя основными параметрами характеризуется трубопроводная арматура</h3>
-                        <h3>4. Арматура среднего деление рассчитана на давление</h3>
-                        <h3>5. Установите соответствие между основными узлами и наименованием трубопроводной арматуры</h3>
-                        <h3>6. Укажите требования к запорной арматуре. Выберете все правильные варианты.</h3>
-                        <h3>7. Укажите функции запорной арматуры. Выберете все правильные варианты.</h3>
-                        <h3>8. Для защиты трубопроводов и нефтегазопромыслового оборудования от механического разрушения от избыточного давления предназначен </h3>
-                        <h3>9. Принцип работы задвижки основан</h3>
-                        <h3>10. При замене прокладки во фланцевом соединении задвижки ослабить крепёж фланцевого соединения, начиная</h3>
+                        <p>
+                            1. Укажите назначение трубопроводной арматуры <br>
+                            2. Установите соответствие между названиями трубопроводной арматуры и признаками классификации <br>
+                            3. Укажите, какими двумя основными параметрами характеризуется трубопроводная арматура <br>
+                            4. Укажите, на какое давление рассчитана арматура среднего давления<br>
+                            5. Установите соответствие между основными узлами и наименованием трубопроводной арматуры<br>
+                            6. Укажите требования к запорной арматуре. Выберете все правильные варианты.<br>
+                            7. Укажите функции запорной арматуры. Выберете все правильные варианты.<br>
+                            8. Укажите, какое устройство предназначено для защиты трубопроводов и нефтегазопромыслового оборудования от механического разрушения от избыточного давления <br>
+                            9. Выберите, на чем основан принцип работы задвижки основан<br>
+                            10. Укажите, с какой шпильки начать ослабить крепёж фланцевого соединения при замене прокладки во фланцевом соединении задвижки
+                        </p>
                     </div>
                 </div>
             </div>
@@ -82,3 +86,4 @@
     </div>
 </body>
 </html>
+

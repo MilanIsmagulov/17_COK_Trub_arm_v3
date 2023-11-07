@@ -261,13 +261,7 @@ body{
     }
 }
 
-@media (max-width: 1131px){
-    .content img{
-        margin-left: 0;
-        margin-right: 0;
-        height: 300px;
-    }
-
+@media (max-width: 1180px){
     .text_content{
         margin-top: 25px;
     }
@@ -275,20 +269,14 @@ body{
     .first_part{
         flex-direction: column;
     }
-}
-
-@media (max-width: 1131px){
     .content img{
         margin-left: 0;
-        margin-right: 0;
-        height: auto;
-    }
-
-    .text_content{
-        margin-top: 25px;
+        margin-right: 0;      
     }
 
     .content{
+        margin: 0;
+        padding: 10px;
         flex-direction: column;
     }
 
@@ -301,6 +289,7 @@ body{
     }
     
 }
+
 
 @media (max-width: 618px){
     .black_header{

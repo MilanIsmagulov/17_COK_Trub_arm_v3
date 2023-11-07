@@ -1,5 +1,5 @@
 .popup_text{
-    height: 500px;
+    height: 70vh;
     overflow-y: auto;
     scroll-snap-align: start;
     padding: 15px;
@@ -110,8 +110,7 @@
 .popup_content {
     background-color: white;
     color: black;
-    min-width: 700px;
-    max-width: 1000px;
+    width: 80vw;
     border-radius: 25px;
     padding: 25px;
 }
@@ -174,8 +173,10 @@
     visibility: visible;
 }
 
-.popup_text h3{
+.popup_text p{
     font-weight: 500;
+    line-height: 40px;
+    font-size: 25px;
     text-align: start;
     margin-bottom: 15px;
 }

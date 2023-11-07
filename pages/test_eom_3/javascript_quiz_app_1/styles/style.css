@@ -53,6 +53,10 @@ body{
     color: black;
 }
 
+.black_header h1{
+    width: 70%;
+}
+
 .content{
     margin-right: 25px;
     border-radius: 50px;
@@ -197,10 +201,28 @@ input:disabled {
 
     }
 
+    .content{
+        margin-right: 0;
+    }
+
+    .step_marker_and_buttons{
+        align-items: center;
+        margin: 0;
+        width: 100%;
+        padding: 5vh;
+        margin-top: 8vh;
+        padding-bottom: 50px;
+    }
+
     .answers_btn form {
         width: 700px;
         
     }
+
+    .step_marker{
+        margin-left: 0;
+    }
+
     .answers_btn form div {
         width: 700px;
 
@@ -218,11 +240,6 @@ input:disabled {
         padding-bottom: 50px;
     }
 
-    .step_marker_and_buttons {
-        width: 90vw;
-        padding-bottom: 0px;
-        
-    }
 
     .answers_btn form div {
         margin: 5px;
@@ -242,3 +259,11 @@ input:disabled {
     }
 }
 
+@media (max-width: 820px) {
+    .step_marker_and_buttons{
+        margin: 0;
+        width: 100%;
+        padding: 5vh;
+        margin-top: 30vh;
+    }
+}

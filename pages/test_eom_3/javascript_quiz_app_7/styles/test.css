@@ -237,7 +237,7 @@ body{
 
 .answers_btn form{
     border-radius: 35px;
-    max-width: 1300px;
+    max-width: 90%;
 }
 
 .answers_btn form div p{

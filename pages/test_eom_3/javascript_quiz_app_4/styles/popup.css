@@ -1,6 +1,6 @@
 .popup_text{
-    height: 500px;
-    overflow-y: auto;
+    height: 85%;
+    overflow-y: scroll;
     scroll-snap-align: start;
     padding: 15px;
     align-items: flex-start;
@@ -110,7 +110,7 @@
 .popup_content {
     background-color: white;
     color: black;
-    max-width: 1000px;
+    height: 70vh;
     border-radius: 25px;
     padding: 25px;
 }
@@ -173,8 +173,10 @@
     visibility: visible;
 }
 
-.popup_text h3{
+.popup_text p{
     font-weight: 500;
+    line-height: 40px;
+    font-size: 25px;
     text-align: start;
     margin-bottom: 15px;
 }
@@ -187,3 +189,12 @@
 #close_popup_button_1{
     cursor: pointer;
 }
+
+.popup_text p{
+    font-weight: 500;
+    line-height: 40px;
+    font-size: 25px;
+    text-align: start;
+    margin-bottom: 15px;
+}
+

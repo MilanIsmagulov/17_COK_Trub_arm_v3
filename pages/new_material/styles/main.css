@@ -17,9 +17,9 @@ html{
 }
 
 body{
-    height: 100vh;
+    background-repeat: repeat;
+    height: 100%;
     background-color: rgba(189, 215, 238, 0.85);
-
 }
 
 .black_header{
@@ -53,6 +53,8 @@ body{
     flex-direction: row;
     align-items: flex-start;
     justify-content: center;
+    
+
 }
 
 .left_side{
@@ -100,6 +102,7 @@ body{
 
 .hexagon_menu{
     display: inline-flex;
+    
 }
 
 .hexagon{
@@ -113,6 +116,7 @@ body{
     justify-content: center;
     clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
     transition-duration: 0.5s;
+   
 }
 
 .hexagon_link{
@@ -224,6 +228,11 @@ body{
 @media (max-width: 1450px){
     .black_header{
         height: 200px;
+    }
+
+    body{
+        height: 310%;
+        background-color: rgba(189, 215, 238, 0.85);
     }
 
     .container{

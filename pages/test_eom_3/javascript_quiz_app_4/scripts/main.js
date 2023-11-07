@@ -2,6 +2,9 @@ let test = document.querySelector('#question_number_1');
 let testAnswers = document.querySelector('#answers_buttons1');
 let Povtor = document.querySelector('#check_button_2');
 let Dalee = document.querySelector('#check_button_3')
+let Backward = document.querySelector('#check_button_0')
+
+
 
 Povtor.classList = ('disabled_button');
 Povtor.addEventListener('click' , function(){
@@ -14,7 +17,7 @@ console.log('Script is Loaded')
 
 let questions = [
     {
-        text: 'Арматура среднего деление рассчитана на давление ',
+        text: 'Арматура среднего давления рассчитана на давление:',
         right: 1,
         answers: ['0 – 1,5 МПа', '1,5 – 10 МПа', '10 – 80 МПа',],
     },
@@ -23,6 +26,22 @@ let questions = [
 let answerLength = questions[0].answers;
 let numberOfQuestion = 4; 
 let numberOfQuestionSum = 10;
+
+
+let numberOfCOK = 17;
+let numberOfEOM = 3;
+
+
+Backward.setAttribute('onclick', `location.href='../javascript_quiz_app_${numberOfQuestion-1}/index.html'`)
+if (numberOfQuestion === 1){
+    Backward.classList.add('disabled_button')
+}
+
+if (numberOfQuestion === numberOfQuestionSum){
+    Dalee.setAttribute('onclick', `location.href='../javascript_result_page/index.html'`)
+} else {
+    Dalee.setAttribute('onclick', `location.href='../javascript_quiz_app_${numberOfQuestion+1}/index.html'`)
+}
 
 let stepMarkerPlace = document.querySelector('.step_marker');
 console.log("stepMarkerPlace")
@@ -91,7 +110,9 @@ let chekBtn = document.querySelector('#check_button_1');
                     if (input.dataset.answer == form.dataset.right){
                         localStorage.setItem('answer_' + numberOfQuestion, JSON.stringify({questionPlace: true}));
                         disButton.classList.add('disabled_button');
-                        Povtor.classList.remove('disabled_button');
+                        if(numberOfEOM != 3){
+                            Povtor.classList.remove('disabled_button');
+                        }
                         Dalee.classList.remove('disabled_button');
 
                         form.children[input.dataset.answer].classList.add('correct');
@@ -105,7 +126,9 @@ let chekBtn = document.querySelector('#check_button_1');
                     }else{
                         localStorage.setItem('answer_' + numberOfQuestion, JSON.stringify({questionPlace: false}));
                         disButton.classList.add('disabled_button');
-                        Povtor.classList.remove('disabled_button');
+                        if(numberOfEOM != 3){
+                            Povtor.classList.remove('disabled_button');
+                        }
                         Dalee.classList.remove('disabled_button');
                         let wrAns = input.dataset.answer
                         form.children[wrAns].classList.add('incorrect');
@@ -118,8 +141,6 @@ let chekBtn = document.querySelector('#check_button_1');
         };
     };
 });
-
-
 
 let openPopUpButton = document.querySelector('#open_popup_button')
 let closePopUpButton = document.querySelector('#close_popup_button_1')

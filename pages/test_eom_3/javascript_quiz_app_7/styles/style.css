@@ -1,4 +1,5 @@
 @import url('./test.css');
+@import url('./popup.css');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 *{
@@ -15,7 +16,7 @@ a{
 body{
     background: #fff;
     height: 100vh;
-    width: 100vw;
+    width: 100%;
 }
 
 .questions span{
@@ -38,8 +39,8 @@ body{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin: 25px;
-
+    padding: 25px;
+    width: 100%;
 }
 
 
@@ -271,14 +272,14 @@ body{
 .text_questions{
     padding: 35px;
 }
-
+/* 
 .popup_content{
     background-color: #fff;
     color: #000;
     width: 90vw;
     padding: 10px;
     border-radius: 35px;
-}
+} */
 
 .close_popup{
     display: flex;
