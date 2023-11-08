@@ -342,4 +342,11 @@ body{
     cursor: no-drop;
     background-color: grey;
     color: white;
+    
+}
+
+@media (max-width: 820px){
+    .small{
+        height: 120px;
+    }
 }

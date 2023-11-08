@@ -75,13 +75,13 @@ body{
 
 .first_part{
     display: flex;
+    align-items: center;
 }
 
 .content{
     display: flex;
     flex-direction: column;
-    /* height: 83vh;
-    overflow-y: auto; */
+    justify-content: center;
     scroll-snap-align: start;
     padding: 35px;
     margin: 0px 25px 25px 0px;
@@ -89,7 +89,7 @@ body{
 }
 
 .content img{
-    height: 570px;
+    height: 500px;
     border-radius: 30px;
     margin-right: 30px;
     margin-left: 5px;

@@ -302,9 +302,6 @@ input:disabled {
         width: 70%;
         height: 60%;
     }
-    /* .theory_eom{
-        height: 400px;
-    } */
     .content{
         margin-right: 0;
     }
@@ -322,6 +319,13 @@ input:disabled {
         display: flex;
         align-items: flex-start;
         height: 500px;
+    }
+    .black_header{
+        height: 140px;
+    }
+
+    .black_header h1{
+        width: 67%;
     }
 }
 

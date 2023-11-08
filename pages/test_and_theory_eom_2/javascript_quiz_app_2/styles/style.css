@@ -222,7 +222,11 @@ input:disabled {
     }
 
     .black_header{
-        height: 130px;
+        height: 140px;
+    }
+
+    .black_header h1{
+        width: 67%;
     }
 
     .theory_eom{
@@ -286,13 +290,7 @@ input:disabled {
     .answers_btn form {
         margin-bottom: 20px;
     }
-}
 
-@media (max-width: 1180px) {
-    body{
-        width: 100%;
-
-    }
 
     .answers_btn form div {
         width: 700px;
@@ -319,13 +317,7 @@ input:disabled {
     .main_buttons button {
         width: 130px;
     }
-}
 
-
-@media (max-width: 1180px) {
-    .black_header h1{
-        width: 50%;
-    }
 
     .step_marker_and_buttons{
         display: flex;
@@ -356,6 +348,8 @@ input:disabled {
         align-items: flex-start;
         height: 500px;
     }
+
+    
 }
 
 

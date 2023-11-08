@@ -281,7 +281,7 @@ input:disabled {
     }
 
     .black_header{
-        height: 130px;
+        height: 140px;
     }
 
     .theory_eom{
@@ -298,6 +298,43 @@ input:disabled {
         padding: 15px;
         padding-top: 0;
         padding-bottom: 0;
+    }
+
+    .black_header{
+        height: 140px;
+    }
+
+    .black_header h1{
+        width: 67%;
+    }
+
+    .step_marker_and_buttons{
+        display: flex;
+    }
+
+    .theory_eom{
+        height: 400px;
+    }
+    .content{
+        margin-right: 0;
+    }
+    .popup_text img{
+
+        height: 100%;
+    }
+    .popup_body{
+        height: 50vh;
+    }
+    .popup_content {
+        height: 50vh;
+    }
+    .popup_text{
+
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        text-align: start;
+ 
     }
 }
 
