@@ -118,10 +118,14 @@ body{
   
 }
 
+#iksweb3_1{
+    margin-bottom: 50px;
+}
+
 #iksweb3_2{
     display: none;
     width: 100%;
-    display: flex;
+    
 }
 
 .image_part a{

@@ -184,7 +184,13 @@ body{
 .shema_arm p{
     margin-left: 25px;
     padding: 25px;
+    padding-bottom: 0;
+    padding-top: 0;
     font-size: 30px;
+}
+
+.text_part h1{
+    padding-bottom: 25px;
 }
 
 .image_part{
