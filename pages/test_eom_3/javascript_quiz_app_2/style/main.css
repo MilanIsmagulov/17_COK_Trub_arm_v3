@@ -38,6 +38,7 @@ body{
 	padding-right: 25px;
 	padding-top: 10px;
 	padding-bottom: 10px;
+	min-width: 300px;
 	width: 17%;
 	
 }
@@ -168,6 +169,7 @@ body{
 		height: 90px;
 	}
 	.spancol {
+		min-width: 290px;
 		width: 28%;
 	}
 
@@ -247,6 +249,7 @@ body{
 	}
 
 	.spancol{
+		min-width: 200px;
 		font-size: 18px;
 		width: 30%;
 	}

@@ -10,9 +10,9 @@ const correctAnswers = [
     // Правильные ответы для второй колонки
 ];
 
-const nameCol1 = 'Задвижка клиновая'
+const nameCol1 = 'Кран <br> шаровой'
 const nameCol2 = 'Задвижка шиберная'
-const nameCol3 = 'Кран <br> шаровой'
+const nameCol3 = 'Задвижка клиновая'
 
 
 

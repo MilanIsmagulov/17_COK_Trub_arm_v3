@@ -10,9 +10,9 @@ const correctAnswers = [
     // Правильные ответы для второй колонки
 ];
 
-const nameCol1 = 'Запорная'
+const nameCol1 = 'Предохранительная'
 const nameCol2 = 'Регулирующая'
-const nameCol3 = 'Предохранительная'
+const nameCol3 = 'Запорная'
 
 
 

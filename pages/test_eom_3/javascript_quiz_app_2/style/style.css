@@ -79,6 +79,7 @@
     transition: all 0.3s;
     margin: 10px;
 }
+
 .col.correct {
     background-color: rgb(168, 255, 168);
 }
