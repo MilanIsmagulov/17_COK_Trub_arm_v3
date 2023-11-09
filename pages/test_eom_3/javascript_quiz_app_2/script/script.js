@@ -15,7 +15,6 @@ const nameCol2 = 'Регулирующая'
 const nameCol3 = 'Запорная'
 
 
-
 // Создаем объект для быстрого поиска правильной колонки для каждого ответа
 const answerToColumn = {};
 correctAnswers.forEach((answers, columnIndex) => {
@@ -67,11 +66,27 @@ for (let i = 0; i < numberOfQuestionSum-numberOfQuestion; i++){
 let stepPlaceDescription = document.querySelector('.number_description');
 stepPlaceDescription.innerHTML = numberOfQuestion + '/' + numberOfQuestionSum;
 
+checkAll()
+
+function checkAll(){
+    let checkAnswerBtn = document.querySelector('#check_button_1')
+    checkAnswerBtn.addEventListener('click', function(){
+        
+        if (Object.keys(rowsElement.children).length === 0){
+            checkAnswer2()
+        }
+    })
+};
+
 
 function init2() {
     createColumns();
     localStorage.getItem('data'+numberOfCOK+numberOfEOM+0+numberOfQuestion+numberOfQuestionSum) ? loadList2() : createList2()
+
+    
+    
 }
+
 
 
 
@@ -128,8 +143,8 @@ function createList2() {
     localStorage.setItem('data'+numberOfCOK+numberOfEOM+0+numberOfQuestion+numberOfQuestionSum, JSON.stringify(data))
 
     addEventListeners2();
+    location.reload()
     
-
 }
 
 function loadList2() {
@@ -176,6 +191,7 @@ function loadList2() {
 
 function fromStore2() {
     data = JSON.parse(localStorage.getItem('data'+numberOfCOK+numberOfEOM+0+numberOfQuestion+numberOfQuestionSum))
+    
 }
 
 
@@ -216,18 +232,14 @@ function refreshData(s, e) {
     data[s] = data[s].filter((i) => i !== dragElem.innerText)
 
     localStorage.setItem('data'+numberOfCOK+numberOfEOM+0+numberOfQuestion+numberOfQuestionSum, JSON.stringify(data))
+    
+
 }
 
-let checkAnswerBtn = document.querySelector('#check_button_1')
+
 
 let rowsElement = document.querySelector('#row')
 
-checkAnswerBtn.addEventListener('click', function(){
-    console.log(Object.keys(rowsElement.children).length)
-    if (Object.keys(rowsElement.children).length === 0){
-        checkAnswer2()
-    }
-})
 
 
 function checkAnswer2() {
@@ -273,9 +285,6 @@ function checkAnswer2() {
 localStorage.setItem('answer_' + numberOfQuestion, JSON.stringify({questionPlace: true}));
 
 function refreshAnwser2() {
-
-
-
     location.reload();
 }
 
@@ -316,3 +325,4 @@ if (numberOfQuestion === numberOfQuestionSum){
 } else {
     nextBtn.setAttribute('onclick', `location.href='../javascript_quiz_app_${numberOfQuestion+1}/index.html'`)
 }
+

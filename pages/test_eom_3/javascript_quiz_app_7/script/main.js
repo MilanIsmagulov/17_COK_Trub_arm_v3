@@ -372,7 +372,7 @@ for (i = 0; i < mainQuestions.length; i++){
             if(elem.firstElementChild.checked){
                 // Проверка есть ли в массиве правильных ответов этот вариант ответа(counter)
                 if (mainQuestions[question_number].right.indexOf(counter) != -1){
-                    localStorage.setItem('answer_' + counter + '_' + numberOfQuestion, JSON.stringify({questionPlace: true}));
+                    
                     elem.classList.add('correct')
                     nextBtn.classList.remove('disabled_button')
                     if (numberOfEOM != 3){
@@ -382,7 +382,7 @@ for (i = 0; i < mainQuestions.length; i++){
                 }
                 else
                 {
-                    localStorage.setItem('answer_' + counter + '_' + numberOfQuestion, JSON.stringify({questionPlace: false}));
+                    localStorage.setItem('answer_' + numberOfQuestion, JSON.stringify({questionPlace: false}));
                     elem.classList.add('incorrect')
                     rightcheck=false
                     nextBtn.classList.remove('disabled_button')
@@ -397,7 +397,7 @@ for (i = 0; i < mainQuestions.length; i++){
                 
                 //Выделение правильных ответов, если они не выбраны
                 if (mainQuestions[question_number].right.indexOf(counter) != -1){
-                    localStorage.setItem('answer_' + counter + '_' + numberOfQuestion, JSON.stringify({questionPlace: false}));
+                    localStorage.setItem('answer_' + numberOfQuestion, JSON.stringify({questionPlace: false}));
                     if (numberOfEOM != 3) {
                         elem.classList.add('correct')
                     } else {
@@ -424,7 +424,7 @@ for (i = 0; i < mainQuestions.length; i++){
 
 }; 
 //--------------------------------
-
+localStorage.setItem('answer_' + numberOfQuestion, JSON.stringify({questionPlace: true}));
 
 // Новые переменные связанные с созданными Модальными окнами
 let PopUp1 = document.querySelector('#popup_0');

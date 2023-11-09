@@ -151,3 +151,5 @@ openPopUpButton.addEventListener('click', function(){
 closePopUpButton.addEventListener('click', function(){
     popUpWindow.classList.add('close')
 })
+
+localStorage.clear();

@@ -128,7 +128,7 @@ function createList2() {
     localStorage.setItem('data'+numberOfCOK+numberOfEOM+0+numberOfQuestion+numberOfQuestionSum, JSON.stringify(data))
 
     addEventListeners2();
-    
+    location.reload();
 
 }
 
@@ -222,12 +222,17 @@ let checkAnswerBtn = document.querySelector('#check_button_1')
 
 let rowsElement = document.querySelector('#row')
 
-checkAnswerBtn.addEventListener('click', function(){
-    console.log(Object.keys(rowsElement.children).length)
-    if (Object.keys(rowsElement.children).length === 0){
-        checkAnswer2()
-    }
-})
+checkAll()
+
+function checkAll(){
+    let checkAnswerBtn = document.querySelector('#check_button_1')
+    checkAnswerBtn.addEventListener('click', function(){
+        
+        if (Object.keys(rowsElement.children).length === 0){
+            checkAnswer2()
+        }
+    })
+};
 
 
 function checkAnswer2() {

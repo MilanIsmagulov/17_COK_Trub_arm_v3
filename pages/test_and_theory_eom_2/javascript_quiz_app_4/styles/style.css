@@ -347,19 +347,23 @@ input:disabled {
         margin-right: 0;
     }
     .popup_text img{
-
         height: 100%;
     }
     .popup_body{
         height: 50vh;
     }
     .popup_content {
+        padding: 5px;
+        margin: 5px;
+
         height: 50vh;
     }
     .popup_text{
         display: flex;
+        overflow: scroll;
         align-items: flex-start;
-        height: 500px;
+        height: 85%;
+        
     }
 }
 

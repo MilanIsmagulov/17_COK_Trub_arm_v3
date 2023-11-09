@@ -13,7 +13,7 @@ function reloadPage(){
 
 }
 
-
+let numberOfCOK = 17;
 let numberOfQuestion = 8; 
 let numberOfQuestionSum = 13;
 
@@ -171,7 +171,7 @@ function swapItems(fromIndex, toIndex) {
         
         storeItems.push(i.children[1].innerText);
     }
-    localStorage.setItem(`data+${numberOfQuestionSum}+${numberOfQuestion}`, JSON.stringify(storeItems));
+    localStorage.setItem(`data${numberOfQuestionSum}+${numberOfQuestion}`, JSON.stringify(storeItems));
 }
 
 function getCurrentList() {
@@ -206,34 +206,34 @@ function checkAnwser() {
         i++;
     }
 
-    listItems.forEach((item, index) => {
-        itemText = item.getElementsByTagName('div')[0].innerText;
-        console.log(index);
-        console.log(itemText);
-        console.log("_________");
+    // listItems.forEach((item, index) => {
+    //     itemText = item.getElementsByTagName('div')[0].innerText;
+    //     console.log(index);
+    //     console.log(itemText);
+    //     console.log("_________");
 
 
 
         
-    });
+    // });
 }
 
 
-function addEventListeners() {
-    const draggables = document.querySelectorAll('.item');
-    const dragListItems = document.querySelectorAll('.list li');
+// function addEventListeners() {
+//     const draggables = document.querySelectorAll('.item');
+//     const dragListItems = document.querySelectorAll('.list li');
 
-    draggables.forEach((draggable) => {
-        // draggable.addEventListener('dragstart', dragStart);
-    });
+//     draggables.forEach((draggable) => {
+//         // draggable.addEventListener('dragstart', dragStart);
+//     });
 
-    dragListItems.forEach((item) => {
-        // item.addEventListener('dragover', dragOver);
-        // item.addEventListener('drop', dragDrop);
-        // item.addEventListener('dragenter', dragEnter);
-        // item.addEventListener('dragleave', dragLeave);
-    });
-}
+//     dragListItems.forEach((item) => {
+//         // item.addEventListener('dragover', dragOver);
+//         // item.addEventListener('drop', dragDrop);
+//         // item.addEventListener('dragenter', dragEnter);
+//         // item.addEventListener('dragleave', dragLeave);
+//     });
+// }
 
 function openPopUp(){
     let popUpWindow = document.querySelector('#popup1')

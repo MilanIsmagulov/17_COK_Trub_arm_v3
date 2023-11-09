@@ -41,3 +41,14 @@ let percentOfAnswers =  Math.floor((trueAnswers/resultData.length)*100)
 questionPercentPlace.innerHTML = percentOfAnswers + '<strong>%</strong>';
 // answerDiagram.innerHTML = percentOfAnswers + '%';
 answerDiagram.setAttribute('style', '--p:' + percentOfAnswers + ';' + '--c:rgb(0, 114, 192);');
+
+let reloadTestBtn = document.querySelector('#reload_test_button');
+reloadTestBtn.addEventListener('click', function(){
+    localStorage.clear();
+})
+
+
+let toGeneralPage = document.querySelector('#general_page_button_1');
+toGeneralPage.addEventListener('click', function(){
+    localStorage.clear();
+})

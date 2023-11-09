@@ -192,8 +192,6 @@
 
 .theory_eom{
     flex-direction: column;
-    height: 540px;
-    overflow-y: auto;
     margin-right: 25px;
     
 }

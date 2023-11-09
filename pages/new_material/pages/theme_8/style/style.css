@@ -97,9 +97,16 @@ body{
 }
 
 .table_part img{
-    width: 100px;
     margin-left: 25px;
+    width: 30%;
+    max-width: 50%;
+    background-color: white;
+    padding-left: 60px;
+    border-radius: 50px;
 }
+
+
+
 
 .table_part tr td{
     vertical-align: bottom;
@@ -174,13 +181,6 @@ body{
     margin-bottom: 50px;
 }
 
-.table_part img{
-    width: 60%;
-    background-color: white;
-    padding-left: 60px;
-    border-radius: 50px;
-}
-
 .table_part p{
     font-size: calc(1em + 10px);
     margin-left: 35px;
@@ -196,7 +196,7 @@ body{
 }
 
 .middle_part img{
-    width: 80%;
+    width: 55%;
     border-radius: 50px;
 }
 
