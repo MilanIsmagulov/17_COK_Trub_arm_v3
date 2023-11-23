@@ -1,0 +1,29 @@
+<course>
+<title>ФГОС СПО 18.02.09 МДК.01.01 Колонны насадочного типа</title>
+<description/>
+<language>ru</language>
+<!-- Что это? -->
+<code>301121130</code> 
+<!-- Что это? -->
+<fgos_title>ФГОС СПО 18.02.09</fgos_title>
+<fgos_text>Переработка нефти и газа</fgos_text>
+<mdk_title>МДК.01.01</mdk_title>
+<mdk_text>Технологическое оборудование и коммуникации</mdk_text>
+<structure>
+<item0>
+<name>Трубопроводная арматура
+</name>
+<code>1_eom</code>
+</item0>
+<item1>
+<name>Трубопроводная арматура
+</name>
+<code>2_eom</code>
+</item1>
+<item2>
+<name>Трубопроводная арматура
+</name>
+<code>3_eom</code>
+</item2>
+</structure>
+</course>
