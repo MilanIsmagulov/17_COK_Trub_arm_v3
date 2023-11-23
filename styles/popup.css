@@ -1,11 +1,11 @@
 .popup_text{
-    height: 500px;
-    overflow-y: auto;
+    /* height: 500px;
+    overflow-y: auto; */
     scroll-snap-align: start;
     padding: 15px;
     align-items: flex-start;
     flex-direction: column;
-    padding: 20px;
+    padding: 10px;
 }
 
 .popup_content_header{
@@ -19,6 +19,7 @@
 }
 
 .key_word_text{
+    width: 100% !important;
     margin-bottom: 20px;
     padding-bottom: 10px;
     border-bottom: solid 1px;
